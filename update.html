@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Lab 9</title>
+{% endblock %}
+
+{% block body %}
+<div>
+    <h2>New_Student</h2><br>
+    <form action="/add/{{task.id}}" method="POST">
+         <p>name_of_student<input type="text" name="Name_of_the_Student" value ="{{task.Name_of_the_Student}}"></p><br>
+         <p>mid1<input type="number" name="mid1"  value ="{{task.mid1}}"></p><br>
+         <p>mid2 <input type="number" name="mid2"  value ="{{task.mid2}}"></p><br>
+         <p>result<input type="number" name="result"  value ="{{task.result}}"></p><br>
+         <input type="submit" value="Add">
+    </form>
+</div>
+{% endblock %}

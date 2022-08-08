@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Lab9</title>
+{% endblock %}
+
+{% block body %}
+<div>
+    <table>
+        <tr>
+            <td>Name_of_the_Student</td>
+            <td>mid1</td>
+            <td>mid2</td>
+            <td>result</td>
+        </tr>
+        {% for task in tasks %}
+            <tr><td>{{ task.name_of_student }}</td>
+                <td>{{ task.mid1}}</td>
+                <td>{{ task.mid2}}</td>
+                <td>{{ task.result}}</td>
+                    <a href="/delete/{{task.id}}">Remove</a><br>
+                    <a href="/add/{{task.id}}">Insert</a>
+            </tr>
+        {% endfor %}
+     </table>
+    {% endif %}
+    <br>
+    <div>
+    <form action="/" method="POST">
+        <p>Name_of_the_Student <input type="text" name="Name_of_the_Student"></p><br>
+        <p>   mid1<input type="number" name="mid1"></p><br>
+        <p>   mid2 <input type="number" name="mid2"></p><br>
+        <p> result <input type="number" name="result"></p> <br>
+        <input type="submit" value="New_Student">
+    </form>
+    </div>
+{% endblock %}
